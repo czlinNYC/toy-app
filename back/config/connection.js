@@ -1,17 +1,13 @@
 const pgp = require('pg-promise')();
-
+// insert your own db info below
 const opts = {
-  database: 'teammembers',
+  database: 'afthaTeam',
   user: 'aftha05',
   password: 'afthaprogram'
 };
-const opts2 = {
-  database: '',
-  user:  '',
-  password: '',
-}
+
 const db = pgp(opts);
-// const db = pgp(process.env.DATABASE_URL + "?ssl=true");
+
 
 module.exports = {
   pgp,

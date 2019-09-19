@@ -1,5 +1,5 @@
 const router = require('express')();
-const skipController = require('../controllers/memberController');
+const memberController = require('../controllers/memberController');
 
 
 function passError(err, req, res, next) {
@@ -7,23 +7,23 @@ function passError(err, req, res, next) {
     console.log(err, 'router');
     return res.status(500).json({ error: err });
   }
-  console.log(res.locals.oneSkip, 'router');
+  console.log(res.locals.member, 'router');
   return res.json(res.locals.members);
 }
 router.get('/:id',
-    skipController.getMembers,
+    memberController.getMembers,
     (req,res) => res.json(res.locals.members), passError);
 router.get('/member/:id',
-    skipController.getMembers,
-    (req,res) => res.json(res.locals.members), passError);
+    memberController.getMemberById,
+    (req,res) => res.json(res.locals.member), passError);
 router.post('/',
-    skipController.insertMember,
+    memberController.insertMember,
     (req,res) => res.json(res.locals.member), passError);
 router.put('/:id',
-    skipController.updateMember,
+    memberController.updateMember,
     (req,res) => res.json(res.locals.member), passError);
 router.delete('/:id',
-    skipController.deleteMember,
+    memberController.deleteMember,
     (req,res) => res.json(res.locals.member), passError);
 
 module.exports = router;
