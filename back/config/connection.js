@@ -1,7 +1,7 @@
 const pgp = require('pg-promise')();
 // insert your own db info below
 const opts = {
-  database: 'afthaTeam',
+  database: 'afthaMembers',
   user: 'aftha05',
   password: 'afthaprogram'
 };

@@ -1,4 +1,4 @@
-\connect afthaMembers;
+\connect afthamembers;
 
 DELETE FROM members;
 

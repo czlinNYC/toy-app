@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS afthaMembers;
+DROP DATABASE IF EXISTS afthamembers;
 
-CREATE DATABASE afthaMembers;
+CREATE DATABASE afthamembers;
 
-\connect afthaMembers;
+\connect afthamembers;
 -- tables for the script and user
 DROP TABLE IF EXISTS members;
 
