@@ -14,8 +14,8 @@ return(
     lololol1
     </div>
     {props.data.memberList ? members.map((item)=>{
-        return  <Fragment>
-                    <div key={item.id}>{item.first_name}{' '}{item.last_name}</div>
+        return  <Fragment key={item.id}>
+                    <div >{item.first_name}{' '}{item.last_name}</div>
                 </Fragment>
     }): <div></div>}
     </Fragment>
