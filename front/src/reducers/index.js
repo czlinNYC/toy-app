@@ -16,7 +16,8 @@ const memberReducer = (state = initialState, action) => {
         case "RECEIVE_ERROR":
             return Object.assign({}, state, {
                 isError: true,
-                isFetching: false
+                isFetching: false,
+                err: action.data
             });
         case "FETCHED_MEMBER":
             return Object.assign({}, state, {

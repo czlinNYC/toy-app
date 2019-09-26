@@ -11,7 +11,7 @@ const ViewOne = (props) => {
 return(
     <Fragment>
     <div onClick={()=>props.dispatch(getAllTeamMembers())}>
-    lololol1
+    click me
     </div>
     {props.data.memberList ? members.map((item)=>{
         return  <Fragment key={item.id}>

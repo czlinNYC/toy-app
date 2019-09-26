@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import Navbar from "./Navbar";
 import routes from "../routes";
 import { renderRoutes } from "react-router-config";
 
@@ -14,7 +13,6 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<Navbar />
 				{renderRoutes(routes)}
 			</div>
 		)

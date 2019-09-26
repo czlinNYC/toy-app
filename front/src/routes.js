@@ -3,36 +3,41 @@
 import React, { lazy } from 'react';
 import { Redirect } from 'react-router-dom';
 
+import Landing from './views/Landing';
 import ViewOne from './components/ViewOne';
 import ViewTwo from './components/ViewTwo';
-import viewContainer from "./components/ViewContainer";
+import viewContainer from "./views/ViewContainer";
+import Login from './components/Login';
+import Register from './components/Register';
 
 
 const routes = [
     {
         path: '/',
         exact: true,
-        component: () => <Redirect to="/test/one" />
+        component: () => <Redirect to="/landing/login" />
     },
-    // {
-    //     path: '/landing',
-    //     component: AuthLayout,
-    //     routes: [
-    //         {
-    //             path: '/landing/login',
-    //             exact: true,
-    //             component: lazy(() => import('views/Login'))
-    //         },
-    //         {
-    //             path: '/landing/register',
-    //             exact: true,
-    //             component: lazy(() => import('views/Register'))
-    //         },
-    //         {
-    //             component: () => <Redirect to="/errors/error-404" />
-    //         }
-    //     ]
-    // },
+    {
+        path: '/landing',
+        component: Landing,
+        routes: [
+            {
+                path: '/landing/login',
+                exact: true,
+                component: Login
+                // component: lazy(() => import('./components/Login'))
+            },
+            {
+                path: '/landing/register',
+                exact: true,
+                component: Register
+                // component: lazy(() => import('./components/Register'))
+            },
+            {
+                component: () => <Redirect to="/errors/error-404" />
+            }
+        ]
+    },
     // {
     //     path: '/errors',
     //     component: ErrorLayout,
@@ -40,17 +45,17 @@ const routes = [
     //         {
     //             path: '/errors/error-401',
     //             exact: true,
-    //             component: lazy(() => import('views/Error401'))
+    //             component: lazy(() => import('components/Error401'))
     //         },
     //         {
     //             path: '/errors/error-404',
     //             exact: true,
-    //             component: lazy(() => import('views/Error404'))
+    //             component: lazy(() => import('components/Error404'))
     //         },
     //         {
     //             path: '/errors/error-500',
     //             exact: true,
-    //             component: lazy(() => import('views/Error500'))
+    //             component: lazy(() => import('components/Error500'))
     //         },
     //         {
     //             component: () => <Redirect to="/errors/error-404" />

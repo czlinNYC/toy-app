@@ -1,14 +1,14 @@
 import React from 'react';
 
 
-const ViewTwo = () => {
+const Login = () => {
     
 return(
     <div>
-    dont click me
+    login page goes here
     </div>
 )
 
 }
 
-export default ViewTwo;
+export default Login;
