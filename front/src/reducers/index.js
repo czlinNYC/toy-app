@@ -1,6 +1,6 @@
 const initialState = { 
     memberData: {},
-    memberList: {},
+    memberList: [],
     isFetching: false,
     isError: false
 };

@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { action_creator } from "./actions/fetchTeam";
+import Navbar from "./Navbar";
+import routes from "../routes";
+import { renderRoutes } from "react-router-config";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: "blah"
-    }
-  }
-  render () {
-    return(
-      <div></div>
-    )
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			data: ""
+		}
+	}
+	render() {
+		return (
+			<div>
+				<Navbar />
+				{renderRoutes(routes)}
+			</div>
+		)
+	}
 }
 
 const mapStateToProps = state => {

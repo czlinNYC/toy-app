@@ -10,7 +10,7 @@ function passError(err, req, res, next) {
   console.log(res.locals.member, 'router');
   return res.json(res.locals.members);
 }
-router.get('/:id',
+router.get('/',
     memberController.getMembers,
     (req,res) => res.json(res.locals.members), passError);
 router.get('/member/:id',

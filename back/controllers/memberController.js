@@ -10,7 +10,7 @@ async function getMembers(req,res,next) {
     }
 }
 
-async function getMemberyId(req,res,next) {
+async function getMemberById(req,res,next) {
     try {
         res.locals.member = await membersModel.getMemberById(req.params.id);
         next();
